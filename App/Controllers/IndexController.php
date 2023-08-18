@@ -3,8 +3,9 @@
     namespace App\Controllers;
 
     use MF\Controller\Action;
-    use App\Connection;
     use App\Models\Users;
+
+    use MF\Model\Container;
 
     class IndexController extends Action
     {
@@ -15,13 +16,9 @@
 
             if($get_db) {
                 
-                $conn = Connection::getDb();
-
-                $users = new Users($conn);
+                $users = Container::getModel('Users');
 
                 $userslist = $users->getUsers();
-                unset($conn);
-                unset($users);
             
                 $this->view->users = $userslist;
             }

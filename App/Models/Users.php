@@ -2,15 +2,11 @@
 
     namespace App\Models;
 
-    class Users
+    use MF\Model\Model;
+
+    class Users extends Model
     {
-        protected $db;
-
-        public function __construct(\PDO $db)
-        {
-            $this->db = $db;
-        }
-
+        
         public function getUsers()
         {
             try {
