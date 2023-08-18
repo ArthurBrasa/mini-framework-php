@@ -33,6 +33,12 @@
                 'action' => 'index'
             );
 
+            $routes['api'] = array(
+                'route' => '/api',
+                'controller' => 'ApiController',
+                'action' => 'index'
+            );
+
             $this->setRoutes($routes);
         }
 
