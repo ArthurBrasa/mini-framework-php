@@ -20,6 +20,8 @@
                 $users = new Users($conn);
 
                 $userslist = $users->getUsers();
+                unset($conn);
+                unset($users);
             
                 $this->view->users = $userslist;
             }
