@@ -3,17 +3,28 @@
     namespace App\Controllers;
 
     use MF\Controller\Action;
+    use App\Connection;
+    use App\Models\Users;
 
     class IndexController extends Action
     {
 
-        public function index(): void
+        public function index() : void
         {
-            $this->view->dados = array(
-                'nome' => 'Arthur',
-                'idade' => 21
-            );
+             $get_db = false;  
 
+            if($get_db) {
+                
+                $conn = Connection::getDb();
+
+                $users = new Users($conn);
+
+                $userslist = $users->getUsers();
+            
+                $this->view->users = $userslist;
+            }
+            
+        
             $this->render('wellcome');
         }
 

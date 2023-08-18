@@ -1,2 +1,7 @@
-<h1>Slim Framework</h1>
-<?php echo "Bem-Vindo ao Slim Framework!" ?>
+<section class="container m-auto text-center">
+    <h1>Slim Framework</h1>
+    <h4> <?php echo "Bem-Vindo ao Slim Framework!" ?> </h4>
+    
+    <h6>Desenvolvido por: <?php if(isset($this->views->users)) { echo $this->view->users[0]['name']; } else {echo "Arthur Brasa";} ?></h6>
+    <a class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover    " href="/info">Info</a>
+</section>
