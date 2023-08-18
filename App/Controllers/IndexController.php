@@ -12,7 +12,7 @@
 
         public function index() : void
         {
-             $get_db = true;  
+             $get_db = false;  
 
             if($get_db) {
                 
