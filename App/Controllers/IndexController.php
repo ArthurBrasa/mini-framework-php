@@ -22,19 +22,8 @@
             
                 $this->view->users = $userslist;
             }
-            
         
-            $this->response(array(
-                'name' => 'João',
-                'age' => 20,
-                'email' => 'joao@teste.com',
-                'address' => array(
-                    'street' => 'Rua teste',
-                    'number' => 123,
-                    'city' => 'São Paulo'
-                )
-                ), 200
-            );
+            $this->response($this->render('index'), 200);
         }
 
         public function info(): bool
