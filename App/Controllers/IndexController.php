@@ -22,8 +22,7 @@
             
                 $this->view->users = $userslist;
             }
-        
-            $this->response($this->render('index'), 200);
+            $this->response($this->render('wellcome'), 200);
         }
 
         public function info(): bool
