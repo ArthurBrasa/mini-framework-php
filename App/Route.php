@@ -21,6 +21,18 @@
                 'action' => 'info'
             );
 
+            $routes['homePage'] = array(
+                'route' => '/home',
+                'controller' => 'IndexController',
+                'action' => 'home'
+            );
+
+            $routes['store'] = array(
+                'route' => '/store',
+                'controller' => 'StoreController',
+                'action' => 'index'
+            );
+
             $this->setRoutes($routes);
         }
 

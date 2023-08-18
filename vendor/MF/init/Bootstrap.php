@@ -26,17 +26,26 @@
 
         protected function run($url) : void
         {
-            
+            $status = 404;
             foreach ($this->getRoutes() as $key => $route){
-
                 if($url == $route['route']){
                     $class = "App\\Controllers\\".ucfirst($route['controller']);
                     $controller = new $class;
                     $action = $route['action'];
                     $controller->$action();
+                    $status = 200;
                 }
+            
+            }
+            if($status == 404){
+                http_response_code($status);
+                $class = "App\\Controllers\\".ucfirst('IndexController');
+                $controller = new $class;
+                $action = 'notFound';
+                $controller->$action();
             }
         }
+
         
         protected function getUrl() : string
         {

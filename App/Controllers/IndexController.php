@@ -24,12 +24,32 @@
             }
             
         
-            $this->render('wellcome');
+            $this->response(array(
+                'name' => 'João',
+                'age' => 20,
+                'email' => 'joao@teste.com',
+                'address' => array(
+                    'street' => 'Rua teste',
+                    'number' => 123,
+                    'city' => 'São Paulo'
+                )
+                ), 200
+            );
         }
 
         public function info(): bool
         {
             return phpinfo();
+        }
+
+        public function home(): void
+        {
+            $this->response($this->render('home'), 200);
+        }
+
+        public function notFound(): void
+        {
+            $this->render('404');
         }
 
     }
