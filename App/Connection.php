@@ -14,8 +14,7 @@
 
                 return $conn;
             } catch (\PDOException $e) {
-                return null;
-                // echo "Error! Message: " . $e->getMessage() . " Code: " . $e->getCode();
+                echo "Error! Message: " . $e->getMessage() . " Code: " . $e->getCode();
             }
         }
     }
