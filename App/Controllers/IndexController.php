@@ -14,7 +14,7 @@
                 'idade' => 21
             );
 
-            $this->render('welcome');
+            $this->render('wellcome');
         }
 
         public function info(): bool
